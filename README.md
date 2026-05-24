@@ -24,17 +24,51 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Open Quartus and create a new project.
+
+2.Create a Verilog HDL file and type the 4-bit ripple counter code.
+
+3.Save the file and set it as Top-Level Entity.
+
+4.Compile the program using Processing → Start Compilation.
+
+5.Create a Waveform File (VWF) and insert input/output nodes (clk, q[3..0]).
+
+6.Apply clock input to clk using Value → Clock.
+
+7.Run Functional Simulation.
+
+8.Observe the output waveform and verify the counter sequence from 0000 to 1111.
+
+~~~
+ Developed by:Bala Surya S
+ RegisterNumber: 212225100003
+~~~
 
 **PROGRAM**
 
-/* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
-
- Developed by: RegisterNumber:
-*/
+ Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming
+ 
+~~~
+ module digital9(out,clk,rst); 
+ input clk,rst; 
+ output reg [3:0]out; 
+ always @ (posedge clk)
+ begin 
+ if(rst) 
+ out<=0; 
+ else 
+ out <= out-1; 
+ end endmodule
+~~~
 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
 
+<img width="1037" height="538" alt="rtf" src="https://github.com/user-attachments/assets/58fcc2ce-6a7c-43d7-ad9a-80083e95d964" />
+
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
 
+<img width="1275" height="677" alt="op" src="https://github.com/user-attachments/assets/d7e35bf1-9d3b-47e0-8888-21fda060c8cf" />
+
 **RESULTS**
+Thus, To implement 4 Bit Ripple Counter using verilog and validating their functionaly using their functional tables is executed succsessfully.
